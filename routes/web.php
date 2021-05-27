@@ -32,6 +32,12 @@ Route::group(['middleware' => ['auth', 'role:investor']], function() {
     Route::get('/dashboard/postcreate', 'App\Http\Controllers\DashboardController@postcreate')->name('dashboard.postcreate');
 });
 
+Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
+
+Route::get('/p/create', 'App\Http\Controllers\PostsController@create');
+
+Route::post('/p', 'App\Http\Controllers\PostsController@store');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

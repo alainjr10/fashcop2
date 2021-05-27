@@ -12,6 +12,7 @@
                     You're logged in as an Investor! <br>
                     Post an update for projects to invest in <br>
                     input a form here
+                    {{ Auth::user()->email }}
                 </div>
             </div>
         </div>
