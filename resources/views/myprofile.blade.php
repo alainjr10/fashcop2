@@ -13,6 +13,23 @@
                     Your username is {{ Auth::user()->name }} <br>
                     Your email is {{ Auth::user()->email }}
                 </div>
+                <h4 class="ml-8 font-extrabold underline">Your Projects</h4>
+                <div class="grid grid-cols-4">
+                    @foreach ( Auth::user()->posts as $post)
+                        <div class="p-6 bg-white border-b border-gray-200 grid grid-rows gap-3">
+                                <a href="/p/{{ $post->id }}" >
+                                    <div class=" ">
+                                        <img src="/storage/{{ $post->image }}" alt=""  class="object-none h-48 w-full">
+                                    </div>
+                                    <h4 class="ml-8 font-extrabold underline">{{ $post->caption }}</h4>
+                                </a>
+                                <h4 class="ml-8 ">{{ $post->location }}</h4>
+                                <h4 class="ml-8 ">{{ $post->budget }}</h4>
+                                
+                        </div>
+                    @endforeach
+                </div>
+                
             </div>
         </div>
     </div>

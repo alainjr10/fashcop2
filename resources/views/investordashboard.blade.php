@@ -14,4 +14,44 @@
             </div>
         </div>
     </div>
+    <div class="top-projects">
+        <h4 class="font-extrabold ml-10 mr-10 text-2xl underline">Top Projects </h4>
+        <h2 class="font-light ml-10 mr-10 text-sm"> Here are the top funded projects on our site Currently </h2>
+        <div class="grid grid-cols-4 ml-10 mr-10 mb-12">
+            @foreach ( $posts as $post)
+                <div class="p-3 bg-white border-b border-gray-200 grid grid-rows gap-1">
+                        <a href="/p/{{ $post->id }}" >
+                            <div class=" ">
+                                <img src="/storage/{{ $post->image }}" alt=""  class="object-none h-48 w-full">
+                            </div>
+                            <h4 class="ml-3 font-extrabold underline">{{ $post->caption }}</h4>
+                        </a>
+                        <h4 class="ml-3 ">{{ $post->location }}</h4>
+                        <h4 class="ml-3 ">{{ $post->budget }}</h4>
+                        
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+        {{-- Reccommended projects --}}
+    <div class="recommended-projects">
+        <h4 class="font-extrabold ml-10 mr-10 text-2xl underline">Recommended Projects </h4>
+        <h2 class="font-light ml-10 mr-10 text-sm"> Based on you profile and interests, we recommend you to take a look at these projects </h2>
+        <div class="grid grid-cols-4 ml-10 mr-10 mb-12">
+            @foreach ( $posts as $post)
+                <div class="p-3 bg-white border-b border-gray-200 grid grid-rows gap-1">
+                        <a href="/p/{{ $post->id }}" >
+                            <div class=" ">
+                                <img src="/storage/{{ $post->image }}" alt=""  class="object-none h-48 w-full">
+                            </div>
+                            <h4 class="ml-3 font-extrabold underline">{{ $post->caption }}</h4>
+                        </a>
+                        <h4 class="ml-3 ">{{ $post->location }}</h4>
+                        <h4 class="ml-3 ">{{ $post->budget }}</h4>
+                        
+                </div>
+            @endforeach
+        </div>
+    </div>
 </x-app-layout>

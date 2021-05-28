@@ -38,6 +38,8 @@ Route::get('/p/create', 'App\Http\Controllers\PostsController@create');
 
 Route::post('/p', 'App\Http\Controllers\PostsController@store');
 
+Route::get('/p/{post}', 'App\Http\Controllers\PostsController@show');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
