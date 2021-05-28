@@ -27,7 +27,7 @@
                             <h4 class="ml-3 font-extrabold underline">{{ $post->caption }}</h4>
                         </a>
                         <h4 class="ml-3 ">{{ $post->location }}</h4>
-                        <h4 class="ml-3 ">{{ $post->budget }}</h4>
+                        <h4 class="ml-3 ">FCFA {{ $post->budget }}</h4>
                         
                 </div>
             @endforeach
@@ -48,7 +48,7 @@
                             <h4 class="ml-3 font-extrabold underline">{{ $post->caption }}</h4>
                         </a>
                         <h4 class="ml-3 ">{{ $post->location }}</h4>
-                        <h4 class="ml-3 ">{{ $post->budget }}</h4>
+                        <h4 class="ml-3 "> FCFA {{ $post->budget }}</h4>
                         
                 </div>
             @endforeach

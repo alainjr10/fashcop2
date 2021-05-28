@@ -11,12 +11,18 @@ class DashboardController extends Controller
     public function index()
     {   
         if(Auth::user()->hasRole('farmer')){
-            $post = Post::all();
-            return view('farmerdashboard');
+            //$users = Auth::user()->posts()->pluck('user_id');
+            //$users = User::where('id', '!=', Auth::id())->get();
+            $users = Post::all()->except(Auth::id());
+            $authUser = auth()->user()->id;
+            //dd($users);
+            //$posts = Post::all()->except(Auth::id());
+            $posts = Post::where('user_id', '!=', $authUser)->get();
+            //$posts = Post::inRandomOrder()->limit(4)->get();
+            return view('farmerdashboard', compact('posts'));
         }elseif (Auth::user()->hasRole('investor')) {
             $posts = Post::limit(4)->latest()->get();
-            $randomPosts = Post::inRandomOrder()->limit(4)->get();
-            return view('investordashboard', compact('posts'));
+            return view('investordashboard', compact('posts',));
         }elseif (Auth::user()->hasRole('admin')) {
             return view('dashboard');
         }
