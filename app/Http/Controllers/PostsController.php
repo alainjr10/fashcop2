@@ -20,8 +20,22 @@ class PostsController extends Controller
             'image'=>['required', 'image'],
         ]);
 
-        auth()->user()->posts()->create($data);
+        //dd(request('image')->store('uploads', 'public'));
+        $imagePath = request('image')->store('uploads', 'public');
 
-        dd(request()->all());
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'location' => $data['location'],
+            'budget' => $data['budget'],
+            'image' => $imagePath,
+        ]);
+
+        //dd(request()->all());
+        return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function _construct()
+    {
+        $this->middleware('auth');
     }
 }
