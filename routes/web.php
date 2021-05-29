@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,10 @@ Route::get('/p/create', 'App\Http\Controllers\PostsController@create');
 Route::post('/p', 'App\Http\Controllers\PostsController@store');
 
 Route::get('/p/{post}', 'App\Http\Controllers\PostsController@show');
+
+Route::get('/profile/{user}/edit', 'App\Http\Controllers\ProfilesController@edit')->name('profile.edit');
+
+Route::patch('/profile/{user}', 'App\Http\Controllers\ProfilesController@update')->name('profile.update');
 
 
 // Route::get('/dashboard', function () {
