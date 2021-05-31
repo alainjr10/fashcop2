@@ -24,7 +24,7 @@ class DashboardController extends Controller
             $posts = Post::limit(4)->latest()->get();
             return view('investordashboard', compact('posts',));
         }elseif (Auth::user()->hasRole('admin')) {
-            return view('dashboard');
+            return view('profiles.index');
         }
         # code...
     }
