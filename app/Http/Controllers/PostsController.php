@@ -45,6 +45,13 @@ class PostsController extends Controller
 
     public function show(Post $post)
     {
+        //return $post->toJson(JSON_PRETTY_PRINT);
         return view('posts.show', compact('post'));
+    }
+
+    public function showapi(Post $post)
+    {
+        return $post->toJson(JSON_PRETTY_PRINT);
+        //return view('posts.show', compact('post'));
     }
 }

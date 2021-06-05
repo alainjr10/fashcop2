@@ -29,6 +29,28 @@ class ProfilesController extends Controller
         //dd(User::find($user));
     }
 
+    public function index2(User $user)
+    {
+        //$user = User::findOrFail($user);
+        $user2 = User::find($user);
+        //dd($user2);
+        if($user->hasRole('investor')){
+            $posts2 = Post::limit(4)->latest()->get()->tojson(JSON_PRETTY_PRINT);
+            return response($posts2, 200);
+            //return view('investordashboard', compact('user', 'posts'));
+        }else if($user->hasRole('admin')){
+            return view('profiles.index', ['user'=>'$user']);
+        }else if($user->hasRole('farmer')){
+            $posts2 = Post::limit(4)->latest()->get()->tojson(JSON_PRETTY_PRINT);
+            return response($posts2, 200);
+            // $posts = Post::limit(4)->latest()->get();
+            // return view('farmerdashboard', compact('user', 'posts'));
+        }
+        
+        //return view('postcreate', ['user'=>'$user']);
+        //dd(User::find($user));
+    }
+
     public function edit(User $user, Profile $profile)
     {
         //dd($user->profile);
@@ -52,6 +74,11 @@ class ProfilesController extends Controller
         auth()->user()->profile->update($data);
         return redirect("/profile/{ $user->id }");
     }
+
+    public function getAllUsers() {
+        $students = User::get()->toJson(JSON_PRETTY_PRINT);
+        return response($students, 200);
+      }
 
 
 }
