@@ -54,7 +54,8 @@ Route::post('register', 'App\Http\Controllers\Auth\RegisteredUserController@regi
 
 Route::get('posts', 'App\Http\Controllers\Api\PostsController@getAllPosts');
 Route::get('posts/{id}', 'App\Http\Controllers\Api\PostsController@getPost');
-Route::post('posts', 'App\Http\Controllers\Api\PostsController@createPost');
+//Route::post('posts-upload', 'App\Http\Controllers\Api\PostsController@store');
+Route::post('/posts', 'App\Http\Controllers\Api\PostsController@createPost');
 Route::put('posts/{id}', 'App\Http\Controllers\Api\PostsController@updatePost');
 //Route::delete('books/{id}','Api\PostsController@deleteBook');
 
