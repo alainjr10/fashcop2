@@ -1,0 +1,188 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @import url('http://getbootstrap.com/dist/css/bootstrap.css');
+  .bannerContainer {
+    position:relative;     
+  }
+  
+  .login {
+    width: 27em;
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    position: relative;
+    z-index: 99;
+  }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+      border-radius: 4px;
+      position: relative;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+      padding: 17px 10px;
+    }
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 90%;
+      background-color: #3498db;
+      width: 100%;
+      position: absolute;
+      right: -34%;
+      border-radius: 6px;
+      z-index: 1;
+      transition: all 400ms ease-in-out;
+      cursor: pointer;
+      box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+    }
+  
+    .text {
+        font-size: 21px;
+        font-weight: 500;
+        color: #fff;
+        margin-right: 3em;
+        margin-left: 3em;
+      }
+  
+  .btn {
+    font-size: 21px;
+    padding: 5px 20px;
+    border: 0;
+    background-color:darkgreen;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+  }
+  .carousel {
+    position:relative;
+    top:0; left:0; right:0; bottom:0;
+    z-index: 0;  
+    padding: 20px;
+    display: flex;
+    flex-wrap:wrap
+  }
+  .navbar {
+    position:relative;
+    z-index:10;
+    background:#fff;
+    max-width:100%;
+    width:100%;
+  }
+  
+  .column{
+    position: relative;
+    padding: 30px;
+  }
+  .sampleProjects{
+    position: relative;
+    padding: 30px;
+  }
+  .button{
+    border: 10, 10, 10, 10;
+    padding: 20px
+  }
+  .textArea {
+    display:flex; 
+    flex-direction:row;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+  }
+  .row {
+    display: flex;
+    flex-wrap:wrap
+    }
+  
+  .h2{
+    justify-content: center;
+    align-content: center;
+  }
+  .card {
+    margin-right: 20px;
+    display: flex;
+    flex-wrap:wrap;
+  }
+  body {
+    background-color:gainsboro;
+    color: black;
+    padding: 20px;
+    font-family: Cambria;
+    text-align: center;
+  }
+  .paragraph {
+    justify-content: center;
+  }
+  p {
+   position: relative;
+  }
+  
+  .button {
+    -webkit-appearance: button;
+    text-rendering: auto;
+    color:darkgreen;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color:forestgreen;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 11px system-ui;
+    padding: 1px 7px 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-image: initial;
+  }

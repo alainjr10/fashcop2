@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,9 @@ Route::patch('/profile/{user}', 'App\Http\Controllers\ProfilesController@update'
 
 
 
+Route::get('/users', function () {
+    return User::all();
+});
 Route::post('register', 'App\Http\Controllers\Auth\RegisteredUserController@register');
 
 Route::get('posts', 'App\Http\Controllers\Api\PostsController@getAllPosts');

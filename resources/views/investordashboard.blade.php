@@ -11,9 +11,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in as an Investor!
                 </div>
+                
+                <div id="home"></div>
             </div>
         </div>
     </div>
+    <div id="example"></div>
     <div class="top-projects">
         <h4 class="font-extrabold ml-10 mr-10 text-2xl underline">Top Projects </h4>
         <h2 class="font-light ml-10 mr-10 text-sm"> Here are the top funded projects on our site Currently </h2>

@@ -40,7 +40,7 @@ class PostsController extends Controller
       } 
 
       if ($file = $request->file('image')) {
-        $path = $file->store('uploads');
+        $path = $file->store('uploads', 'public');
         $name = $file->getClientOriginalName();
 
         //store your file into directory and db
