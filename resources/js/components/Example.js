@@ -1,34 +1,7 @@
-import React, { Component } from 'react';
+//import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-// fetch('http://127.0.0.1:8000/api/users')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-// class Example extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>Cool, it's working</h1>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Example;
-
-// // We only want to try to render our component on pages that have a div with an ID
-// // of "example"; otherwise, we will see an error in our console
-// if (document.getElementById('example')) {
-//     console.log('yoo ma nigga');
-//     alert(response.status);
-//     ReactDOM.render(<Example />, document.getElementById('example'));
-// }
-
-
-
-
-// import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
+import axios from 'axios';
+import React, { Components } from 'react';
 
 class Example extends Component {
     constructor(props) {
@@ -38,6 +11,7 @@ class Example extends Component {
             users: []
         }
     }
+    
 
     componentDidMount() {
         fetch('http://127.0.0.1:8000/api/users')
@@ -61,6 +35,7 @@ class Example extends Component {
             );
         })
     }
+
 
     render() {
         return (
