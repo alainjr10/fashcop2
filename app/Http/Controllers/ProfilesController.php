@@ -57,13 +57,13 @@ class ProfilesController extends Controller
         //dd($profile->user->id);
         // dd(auth()->user()->id);
         //dd(Auth::user()->id);
-        $this->authorize('update', $user->profile);
+        //$this->authorize('update', $user->profile);
         return view('profiles.edit', compact('user'));
     }
 
     public function update(User $user)
     {
-        $this->authorize('update', $user->profile);
+        //$this->authorize('update', $user->profile);
         $data = request()->validate([
             'location' => 'required',
             'interests' => 'required',
@@ -71,8 +71,15 @@ class ProfilesController extends Controller
             // 'image' => '',
         ]);
         //$user->profile->update($data);
-        auth()->user()->profile->update($data);
-        return redirect("/profile/{ $user->id }");
+        if (Profile::where('user_id', '=', Auth::id())->exists()) {
+            // user found
+            auth()->user()->profile()->update($data);
+         }else{
+            auth()->user()->profile()->create($data);
+         }
+        
+        //auth()->user()->profile->update($data);
+        return redirect("/profile/{$user->id}");
     }
 
     public function getAllUsers() {

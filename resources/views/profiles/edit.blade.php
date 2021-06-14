@@ -7,25 +7,37 @@
         </x-slot>
 
         <!-- Validation Errors -->
+        <div><h1 class="text-3xl">Edit Profile</h1> </div>
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="/profile/{{ Auth::id() }}/" enctype="multipart/form-data">
             @csrf
-            @method('PATCH');
+            @method('put');
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="location" :value="__('Location')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="location" class="block mt-1 w-full" type="text" name="location" :value="old('location')" required autofocus />
             </div>
 
             <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+            <div>
+                <x-label for="interests" :value="__('Interests')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="interests" class="block mt-1 w-full" type="text" name="interests" :value="old('interests')" required />
             </div>
+
+            <div class="flex items-center justify-end mt-4">
+                {{-- <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a> --}}
+
+                <x-button class="ml-4">
+                    {{ __('Edit Profile') }}
+                </x-button>
+            </div>
+
 
             <!-- Password -->
             {{-- <div class="mt-4">

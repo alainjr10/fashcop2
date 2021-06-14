@@ -58,9 +58,9 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        @can('update', Auth::user()->profile)
+                        {{-- @can('update', Auth::user()->profile) --}}
                             <a href="/profile/{{ Auth::user()->id }}/edit">Edit Profile</a>   
-                        @endcan
+                        {{-- @endcan --}}
                         
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
